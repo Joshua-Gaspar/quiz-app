@@ -107,6 +107,8 @@ let currentQuiz = 0
 score = 0
 loadQuiz();
 
+answerScore.innerText = `Score: ${score}`;
+
 function loadQuiz() {
     questionScore.innerText = `Question: ${currentQuiz + 1}`;
     deselectAnswers()
@@ -155,16 +157,6 @@ submitBtn.addEventListener('click', () => {
     }
     }
 
-    nextBtn.addEventListener('click', () => {
-        if(currentQuiz < quizData.length) {
-            loadQuiz()
-        } else {
-            quiz.innerHTML = `
-            <h2>You answered ${score}/${quizData.length} questions correctly</h2>
-            <button onclick="location.reload()">Reload</button>
-            `
-        }
- 
-    })
+
 
 });
